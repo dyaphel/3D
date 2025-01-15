@@ -21,6 +21,7 @@ function RotatingCube() {
       <mesh
         ref={cubeRef}
         position={[0, 0, 0]}
+        rotation={[Math.PI / 4, Math.PI / 4, 0]}
         onPointerOver={() => setHovered(true)}
         onPointerOut={() => setHovered(false)}
         onPointerMove={(e) => {
@@ -35,7 +36,7 @@ function RotatingCube() {
 
         {/* Edges attached directly to the cube */}
         <Edges color="cyan"  linewidth={3} emissive="light"  // Add the glowing effect
-            emissiveIntensity={0.8}></Edges>
+            emissiveIntensity={10}></Edges>
       </mesh>
     </>
   );
@@ -43,7 +44,7 @@ function RotatingCube() {
 
 export default function Cube() {
   return (
-    <Canvas camera={{ position: [0, 0, 15], fov: 30 }}>
+    <Canvas camera={{ position: [5, 5, 10], fov: 30 }}>
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
       <RotatingCube />
