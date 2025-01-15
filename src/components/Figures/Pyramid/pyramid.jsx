@@ -7,6 +7,8 @@ function RotatingPyramid() {
   const [hovered, setHovered] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
+  const wireframe = hovered ? true : false;
+
   useFrame(() => {
     if (pyramidRef.current) {
       pyramidRef.current.rotation.x = mousePos.y / 100;
@@ -29,7 +31,9 @@ function RotatingPyramid() {
         }}
       >
         <coneGeometry args={[3, 6, 4]} />
-        <Edges color="cyan"  linewidth={3} emissive="light"  emissiveIntensity={10}></Edges>
+        <meshStandardMaterial color={hovered ? "cyan" : "white"} wireframe={wireframe} />
+        <Edges color="cyan"  linewidth={3} emissive="light"  // Add the glowing effect
+           emissiveIntensity={hovered ? 10 : 0.5}></Edges>
 
       </mesh>
     </>

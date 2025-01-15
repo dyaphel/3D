@@ -8,6 +8,8 @@ function RotatingCube() {
   const [hovered, setHovered] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
+  const wireframe = hovered ? true : false;
+
   // Update the cube rotation based on the mouse position
   useFrame(() => {
     if (cubeRef.current) {
@@ -32,11 +34,11 @@ function RotatingCube() {
         }}
       >
         <boxGeometry args={[3, 3, 3]} />
-        <meshStandardMaterial color={hovered ? "white" : "light"} />
+        <meshStandardMaterial color={hovered ? "cyan" : "white"} wireframe={wireframe} />
 
         {/* Edges attached directly to the cube */}
         <Edges color="cyan"  linewidth={3} emissive="light"  // Add the glowing effect
-            emissiveIntensity={10}></Edges>
+           emissiveIntensity={hovered ? 10 : 0.5}></Edges>
       </mesh>
     </>
   );

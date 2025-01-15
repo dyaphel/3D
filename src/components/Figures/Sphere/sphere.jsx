@@ -1,6 +1,6 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
-import { OrbitControls, useTexture } from "@react-three/drei";
+import { OrbitControls, Edges } from "@react-three/drei";
 import "./sphere.css";
 
 function RotatingSphere() {
@@ -8,6 +8,7 @@ function RotatingSphere() {
   const [hovered, setHovered] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
+  const wireframe = hovered ? true : false; // Enable wireframe only when hovered
 
   // Update the sphere rotation based on the mouse position
   useFrame(() => {
@@ -31,10 +32,16 @@ function RotatingSphere() {
           });
         }}
       >
-        <sphereGeometry args={[3, 12, 12]} />
-        {/* Apply the texture */}
-        <meshStandardMaterial color={hovered ? "cyan" : "white"} wireframe linewidth={3} emissive="light" />
-
+        <sphereGeometry args={[3, 35, 35]} />
+        <meshStandardMaterial color={hovered ? "cyan" : "white"} wireframe={wireframe} />
+        
+        {/* Adjust the edges */}
+        <Edges 
+          color="cyan" 
+          linewidth={hovered ? 3 : 2}  // Slightly thicker lines when hovered, thinner when not
+          emissive="cyan"
+          emissiveIntensity={hovered ? 10 : 0}  // No emissive glow when not hovered
+        />
       </mesh>
     </>
   );

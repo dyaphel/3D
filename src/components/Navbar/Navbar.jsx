@@ -8,6 +8,7 @@ import "./Navbar.css";
       <Link to="/" className="neon-button">Cube</Link>
       <Link to="/sphere" className="neon-button">Sphere</Link>
       <Link to="/pyramid" className="neon-button">Pyramid</Link>
+      <Link to="/pentagon" className="neon-button">Pentagon</Link>
     </nav>
   );
 }

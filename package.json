@@ -14,7 +14,7 @@
   "dependencies": {
     "@react-three/drei": "^9.120.8",
     "@react-three/fiber": "^8.17.12",
-    "@storybook/addon-controls": "^8.4.7",
+    "@storybook/addon-controls": "^8.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.1.1",
@@ -25,11 +25,6 @@
     "@babel/preset-react": "^7.26.3",
     "@chromatic-com/storybook": "^3.2.3",
     "@eslint/js": "^9.17.0",
-    "@storybook/addon-interactions": "^8.4.7",
-    "@storybook/addon-onboarding": "^8.4.7",
-    "@storybook/blocks": "^8.4.7",
-    "@storybook/react-vite": "^8.4.7",
-    "@storybook/test": "^8.4.7",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
@@ -40,7 +35,6 @@
     "eslint-plugin-storybook": "^0.11.2",
     "globals": "^15.14.0",
     "prop-types": "^15.8.1",
-    "storybook": "^8.4.7",
     "vite": "^6.0.7"
   },
   "eslintConfig": {
