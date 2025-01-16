@@ -53,7 +53,7 @@ function RotatingPentagon() {
             y: e.clientY - window.innerHeight / 2,
           });
         }}
-        rotation={[Math.PI / 5, 0, 0]} // Ruota il pentagono per far vedere un bordo all'inizio
+        rotation={[Math.PI / 0, 0, 0]} // Ruota il pentagono per far vedere un bordo all'inizio
       >
         {/* Usa la geometria estrusa per il pentagono 3D */}
         <bufferGeometry attach="geometry" {...geometry} />

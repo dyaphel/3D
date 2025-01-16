@@ -18,7 +18,7 @@ function App() {
 
       {/* Routes */}
       <Routes>
-        <Route path="/" element={<Cube />} />
+        <Route path="/Cube" element={<Cube />} />
         <Route path="/sphere" element={<Sphere />} />
         <Route path="/pyramid" element={<Pyramid />} />
         <Route path="/pentagon" element={<Pentagon />} />

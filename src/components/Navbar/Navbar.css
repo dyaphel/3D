@@ -1,6 +1,6 @@
 .neon-navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     padding: 10px;
     border-bottom: 3px solid cyan; /* Bottom border only */
@@ -10,7 +10,7 @@
   .neon-button {
     margin: 0 10px;
     padding: 10px 20px;
-    border: none;
+    border: 2px solid transparent; 
     font-size: 1.2rem;
     font-weight: bold;
     color: cyan;
@@ -22,8 +22,9 @@
   
   .neon-button:hover {
     color: white;
-    background: light;
+    background-color: #0ff; /* Highlight effect on hover */
+    border-color: #0ff; 
     border-radius: 5px; /* Add subtle rounded corners on hover */
   }
-  
-  
+
+

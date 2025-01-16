@@ -1,0 +1,51 @@
+/* Styling for the dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* Styling for the dropdown button */
+.dropdown-toggle {
+  display: inline-block;
+  background-color: #222;
+  color: #0ff;
+  border: 2px solid #0ff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect for the button */
+.dropdown-toggle:hover {
+  color: #fff;
+  background-color: #0ff;
+}
+
+/* Styling for the dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 3.8rem;
+  left: 0; /* Align dropdown with the button */
+  background-color: #1a1a1a;
+  border: 2px solid cyan;
+  border-radius: 8px; /* More prominent rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 255, 255, 0.2); /* Subtle neon glow */
+  z-index: 1000;
+  width: 180px; /* Fixed width for the dropdown */
+}
+
+/* Styling for each item in the dropdown */
+.dropdown-item {
+  display: block;
+  padding: 0.5rem 1rem; /* Adjusted padding for larger click area */
+  color: cyan;
+  margin: 0; /* Removed margin-left to align the items to the left */
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-left: -10%;
+  text-align: left; /* Align the text to the left */
+}
+
+/* Hover effect for dropdown items */
+.dropdown-item:hover {
+  text-decoration: underline;
+}
