@@ -1,6 +1,7 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import { OrbitControls, Edges } from "@react-three/drei";
+import { Helmet } from "react-helmet";
 import "./sphere.css";
 
 function RotatingSphere() {
@@ -20,6 +21,9 @@ function RotatingSphere() {
 
   return (
     <>
+    <Helmet>
+      <title>Sphere</title>
+    </Helmet>
       <mesh
         ref={sphereRef}
         position={[0, 0, 0]}

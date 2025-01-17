@@ -1,6 +1,7 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import { OrbitControls, Edges } from "@react-three/drei";
+import { Helmet } from "react-helmet";
 import * as THREE from "three"; // Importa THREE per la gestione delle forme
 
 function RotatingPentagon() {
@@ -42,6 +43,9 @@ function RotatingPentagon() {
 
   return (
     <>
+    <Helmet>
+      <title>Pentagon</title>
+    </Helmet>
       <mesh
         ref={pentagonRef}
         position={[0, 0, 0]}

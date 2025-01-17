@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./DropdownMenu.css";
 
 function DropdownMenu({ type, setShape, setAnimation }) {
-  // Menu items for Figures (Shapes)
   const figureItems = [
     { label: "Cube", value: "Cube" },
     { label: "Sphere", value: "Sphere" },
@@ -11,7 +10,6 @@ function DropdownMenu({ type, setShape, setAnimation }) {
     { label: "Pentagon", value: "Pentagon" },
   ];
 
-  // Menu items for Animations
   const animationItems = [
     { label: "Bounce", value: "Bounce" },
     { label: "Spin", value: "Spin" },

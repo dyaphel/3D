@@ -1,7 +1,7 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import { OrbitControls,Edges  } from "@react-three/drei";
-
+import { Helmet } from "react-helmet";
 function RotatingPyramid() {
   const pyramidRef = useRef();
   const [hovered, setHovered] = useState(false);
@@ -18,6 +18,9 @@ function RotatingPyramid() {
 
   return (
     <>
+    <Helmet>
+      <title>Pyramid</title>
+    </Helmet>
       <mesh
         ref={pyramidRef}
         position={[0, 0, 0]}

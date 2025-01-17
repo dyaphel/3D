@@ -24,7 +24,7 @@ function Navbar({ setShape, setAnimation }) {
           toggleDropdown={toggleFiguresDropdown}
           isDropdownOpen={isFiguresDropdownOpen}
         />
-        {isFiguresDropdownOpen && <DropdownMenu type="shapes" setShape={setShape} />}
+        {isFiguresDropdownOpen && <DropdownMenu type="shapes" setShape={setShape} onMouseleave: toggleFiguresDropdown/>}
       </div>
 
       {/* Animation Dropdown Button */}

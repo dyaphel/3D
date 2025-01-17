@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar'
 import Sphere from './components/Figures/sphere/sphere'
 import Pyramid from './components/Figures/pyramid/pyramid'
 import Pentagon from './components/Figures/Pentagon/Pentagon'
+import AppRoutes from './routes/AppRoutes'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -13,16 +14,8 @@ function App() {
   return (
     <Router>
     <div>
-      {/* Navbar */}
-      <Navbar />
-
-      {/* Routes */}
-      <Routes>
-        <Route path="/Cube" element={<Cube />} />
-        <Route path="/sphere" element={<Sphere />} />
-        <Route path="/pyramid" element={<Pyramid />} />
-        <Route path="/pentagon" element={<Pentagon />} />
-      </Routes>
+      <Navbar />    
+      <AppRoutes/>
     </div>
   </Router>
 );

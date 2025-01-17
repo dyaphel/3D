@@ -1,6 +1,7 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import { OrbitControls, Edges } from "@react-three/drei";
+import { Helmet } from "react-helmet";
 import "./Cube.css";
 
 function RotatingCube() {
@@ -20,6 +21,9 @@ function RotatingCube() {
 
   return (
     <>
+    <Helmet>
+      <title>Cube</title>
+    </Helmet>
       <mesh
         ref={cubeRef}
         position={[0, 0, 0]}
@@ -46,6 +50,9 @@ function RotatingCube() {
 
 export default function Cube() {
   return (
+
+
+
     <Canvas camera={{ position: [5, 5, 10], fov: 30 }}>
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
