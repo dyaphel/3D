@@ -1,0 +1,29 @@
+.spin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+    overflow: hidden;
+  }
+  
+  .spinning-object {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #9eff59, #4b42f5, #8e44ad);
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    animation: spin 2s linear infinite, color-shift 6s ease infinite;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  
+  

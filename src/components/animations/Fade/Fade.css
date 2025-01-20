@@ -1,0 +1,25 @@
+.fade-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222; /* Dark background for contrast */
+  }
+  
+  .fade-box {
+    width: 100px;
+    height: 100px;
+    background-color: #ff6f61; /* Bright color for visibility */
+    border-radius: 10px;
+    animation: simple-fade 3s infinite;
+  }
+  
+  @keyframes simple-fade {
+    0%, 100% {
+      opacity: 1; /* Fully visible */
+    }
+    50% {
+      opacity: 0; /* Fully transparent */
+    }
+  }
+  
