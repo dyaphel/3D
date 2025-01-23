@@ -17,8 +17,8 @@ function DropdownMenu({ type, setShape, setAnimation }) {
     { label: "Slide", value: "Slide" },
   ];
 
-  const threedAnimationItems = [
-    { label: "Spinning", value: "Spinning" },
+  const AtomItems = [
+    { label: "core", value: "core" },
     { label: "Orbiting", value: "Orbiting" },
     { label: "Floating", value: "Floating" },
   ];
@@ -50,8 +50,8 @@ function DropdownMenu({ type, setShape, setAnimation }) {
             </Link>
           ))}
 
-        {type === "3Danimations" &&
-          threedAnimationItems.map((item) => (
+        {type === "Atom" &&
+          AtomItems.map((item) => (
             <Link
               key={item.value}
               to={`/${item.value.toLowerCase()}`}

@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Edges } from "@react-three/drei";
 
-function SpinningCube() {
+function SpinningCube() { // Renamed to avoid conflict
   const cubeRef = useRef();
   const [hovered, setHovered] = useState(false); // Track hover state
 
@@ -10,8 +10,8 @@ function SpinningCube() {
   useFrame(() => {
     if (cubeRef.current) {
       cubeRef.current.rotation.x += 0.02; // Adjust rotation speed on X-axis
-      cubeRef.current.rotation.y += 0.02;
-      cubeRef.current.rotation.z += 0.02; // Adjust rotation speed on Y-axis
+      cubeRef.current.rotation.y += 0.02; // Adjust rotation speed on Y-axis
+      cubeRef.current.rotation.z += 0.02; // Adjust rotation speed on Z-axis
     }
   });
 
@@ -40,16 +40,16 @@ function SpinningCube() {
   );
 }
 
-export default function CubeWithSpinningEffect() {
+export default function Core() {
   return (
     <Canvas camera={{ position: [5, 5, 5], fov: 45 }}>
       {/* Lighting */}
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
-      
+
       {/* Spinning Cube */}
       <SpinningCube />
-      
+
       {/* Camera Controls */}
       <OrbitControls />
     </Canvas>

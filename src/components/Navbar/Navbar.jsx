@@ -6,7 +6,7 @@ import "./Navbar.css";
 function Navbar({ setShape, setAnimation }) {
   const [isFiguresDropdownOpen, setIsFiguresDropdownOpen] = useState(false);
   const [isAnimationDropdownOpen, setIsAnimationDropdownOpen] = useState(false);
-  const [is3DAnimationDropdownOpen, setIs3DAnimationDropdownOpen] = useState(false);
+  const [isAtomDropdownOpen, setIsAtomDropdownOpen] = useState(false);
 
   const toggleFiguresDropdown = () => {
     setIsFiguresDropdownOpen(!isFiguresDropdownOpen);
@@ -16,8 +16,8 @@ function Navbar({ setShape, setAnimation }) {
     setIsAnimationDropdownOpen(!isAnimationDropdownOpen);
   };
 
-  const toggle3DAnimationDropdown = () => {
-    setIs3DAnimationDropdownOpen(!is3DAnimationDropdownOpen);
+  const toggleAtomDropdown = () => {
+    setIsAtomDropdownOpen(!isAtomDropdownOpen);
   };
 
   return (
@@ -57,15 +57,15 @@ function Navbar({ setShape, setAnimation }) {
       {/* 3D Animation Dropdown Button */}
       <div className="dropdown">
         <DropdownButton
-          label="3D Animation"
-          toggleDropdown={toggle3DAnimationDropdown}
-          isDropdownOpen={is3DAnimationDropdownOpen}
+          label="Atom"
+          toggleDropdown={toggleAtomDropdown}
+          isDropdownOpen={isAtomDropdownOpen}
         />
-        {is3DAnimationDropdownOpen && (
+        {isAtomDropdownOpen && (
           <DropdownMenu
-            type="3Danimations"
+            type="Atom"
             setAnimation={setAnimation}
-            onMouseLeave={toggle3DAnimationDropdown}
+            onMouseLeave={toggleAtomDropdown}
           />
         )}
       </div>
