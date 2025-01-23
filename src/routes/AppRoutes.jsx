@@ -8,6 +8,8 @@ import Pentagon from '../components/Figures/Pentagon/Pentagon';
 import Bounce from '../components/animations/Bounce/Bounce';
 import Spin from '../components/animations/Spin/Spin';
 import Fade from '../components/animations/Fade/Fade';
+import Slide from '../components/animations/Slide/Slide';
+
 const AppRoutes = () => (
   <Routes>
   
@@ -18,6 +20,7 @@ const AppRoutes = () => (
     <Route path="/bounce" element={<Bounce />} />
     <Route path="/spin" element={<Spin />} />
     <Route path="/fade" element={<Fade/>} />
+    <Route path="/slide" element={<Slide/>} />
 
   </Routes>
 );

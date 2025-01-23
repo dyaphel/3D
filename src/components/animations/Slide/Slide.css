@@ -1,0 +1,34 @@
+.slide-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222; /* Dark background for contrast */
+  }
+  
+  .slide-box {
+    width: 100px;
+    height: 100px;
+    background-color: #ff6f61; /* Bright color for visibility */
+    border-radius: 10px;
+    animation: center-slide 3s infinite;
+  }
+  
+  @keyframes center-slide {
+    0% {
+      transform: translateX(0); /* Start at the center */
+    }
+    25% {
+      transform: translateX(-200px); /* Move 200px to the left */
+    }
+    50% {
+      transform: translateX(0); /* Return to the center */
+    }
+    75% {
+      transform: translateX(200px); /* Move 200px to the right */
+    }
+    100% {
+      transform: translateX(0); /* Return to the center */
+    }
+  }
+  
