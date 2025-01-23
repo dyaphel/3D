@@ -17,6 +17,12 @@ function DropdownMenu({ type, setShape, setAnimation }) {
     { label: "Slide", value: "Slide" },
   ];
 
+  const threedAnimationItems = [
+    { label: "Spinning", value: "Spinning" },
+    { label: "Orbiting", value: "Orbiting" },
+    { label: "Floating", value: "Floating" },
+  ];
+
   return (
     <div className="dropdown-menu">
       <ul>
@@ -31,8 +37,21 @@ function DropdownMenu({ type, setShape, setAnimation }) {
               {item.label}
             </Link>
           ))}
+
         {type === "animations" &&
           animationItems.map((item) => (
+            <Link
+              key={item.value}
+              to={`/${item.value.toLowerCase()}`}
+              className="dropdown-item"
+              onClick={() => setAnimation(item.value)}
+            >
+              {item.label}
+            </Link>
+          ))}
+
+        {type === "3Danimations" &&
+          threedAnimationItems.map((item) => (
             <Link
               key={item.value}
               to={`/${item.value.toLowerCase()}`}

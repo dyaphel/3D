@@ -9,7 +9,7 @@ import Bounce from '../components/animations/Bounce/Bounce';
 import Spin from '../components/animations/Spin/Spin';
 import Fade from '../components/animations/Fade/Fade';
 import Slide from '../components/animations/Slide/Slide';
-
+import SpinningCube from '../components/3Danimation/Spinning/Spinning';
 const AppRoutes = () => (
   <Routes>
   
@@ -21,6 +21,7 @@ const AppRoutes = () => (
     <Route path="/spin" element={<Spin />} />
     <Route path="/fade" element={<Fade/>} />
     <Route path="/slide" element={<Slide/>} />
+    <Route path="/spinning" element={<SpinningCube/>} />
 
   </Routes>
 );
