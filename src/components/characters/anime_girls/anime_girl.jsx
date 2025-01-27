@@ -2,21 +2,22 @@
 import React, { useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import HeadMouseFollowing from "./HeadMouseFollowing"; // Importiamo il componente
+import HeadMouseFollowing from "./HeadMouseFollowing"; // Import the HeadMouseFollowing component
+import Wings from "./Wings"; // Import the Wings component
 
 function AnimeGirl() {
   const groupRef = useRef();
   const { scene } = useGLTF("/anime_girl.glb");
 
-  // Otteniamo i riferimenti per il collo e la testa dal componente HeadMouseFollowing
+  // Get references for the neck and head from the HeadMouseFollowing component
   const { neckRef, headRef } = HeadMouseFollowing();
 
   useEffect(() => {
-    // Troviamo gli oggetti specifici (collo e testa)
+    // Find specific objects (neck and head)
     const neck = scene.getObjectByName("Neck_48");
     const head = scene.getObjectByName("Head_47");
 
-    // Impostiamo i riferimenti agli oggetti specifici
+    // Set references to the specific objects
     if (neck) neckRef.current = neck;
     if (head) headRef.current = head;
   }, [scene, neckRef, headRef]);
@@ -26,10 +27,13 @@ function AnimeGirl() {
       <ambientLight intensity={0.5} />
       <directionalLight position={[-10, 0, 0]} intensity={1} />
 
-      {/* Aggiungiamo il modello 3D */}
+      {/* Add the 3D model */}
       <primitive ref={groupRef} object={scene} position={[0, -2.5, 0]} scale={3} />
 
-      {/* Aggiungiamo i controlli della telecamera */}
+      {/* Add the Wings component and pass the scene to it */}
+      <Wings scene={scene} />
+
+      {/* Add camera controls */}
       <OrbitControls />
     </Canvas>
   );
