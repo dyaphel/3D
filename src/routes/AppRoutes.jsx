@@ -9,7 +9,8 @@ import Bounce from '../components/animations/Bounce/Bounce';
 import Spin from '../components/animations/Spin/Spin';
 import Fade from '../components/animations/Fade/Fade';
 import Slide from '../components/animations/Slide/Slide';
-import Core from '../components/Atom/Core/Core';
+import AnimeGirl from '../components/characters/anime_girls/anime_girl';
+
 const AppRoutes = () => (
   <Routes>
   
@@ -21,7 +22,8 @@ const AppRoutes = () => (
     <Route path="/spin" element={<Spin />} />
     <Route path="/fade" element={<Fade/>} />
     <Route path="/slide" element={<Slide/>} />
-    <Route path="/core" element={<Core/>} />
+    <Route path='/anime_girl' element={<AnimeGirl/>} />
+  
 
   </Routes>
 );

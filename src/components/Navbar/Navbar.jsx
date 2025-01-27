@@ -3,10 +3,10 @@ import DropdownButton from "../DropdownButton/DropdownButton";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import "./Navbar.css";
 
-function Navbar({ setShape, setAnimation }) {
+function Navbar({ setShape, setAnimation, setCharacter }) {
   const [isFiguresDropdownOpen, setIsFiguresDropdownOpen] = useState(false);
   const [isAnimationDropdownOpen, setIsAnimationDropdownOpen] = useState(false);
-  const [isAtomDropdownOpen, setIsAtomDropdownOpen] = useState(false);
+  const [isCharactersDropdownOpen, setIsCharactersDropdownOpen] = useState(false);
 
   const toggleFiguresDropdown = () => {
     setIsFiguresDropdownOpen(!isFiguresDropdownOpen);
@@ -16,8 +16,8 @@ function Navbar({ setShape, setAnimation }) {
     setIsAnimationDropdownOpen(!isAnimationDropdownOpen);
   };
 
-  const toggleAtomDropdown = () => {
-    setIsAtomDropdownOpen(!isAtomDropdownOpen);
+  const toggleCharactersDropdown = () => {
+    setIsCharactersDropdownOpen(!isCharactersDropdownOpen);
   };
 
   return (
@@ -54,18 +54,18 @@ function Navbar({ setShape, setAnimation }) {
         )}
       </div>
 
-      {/* 3D Animation Dropdown Button */}
+      {/* Characters Dropdown Button */}
       <div className="dropdown">
         <DropdownButton
-          label="Atom"
-          toggleDropdown={toggleAtomDropdown}
-          isDropdownOpen={isAtomDropdownOpen}
+          label="Characters"
+          toggleDropdown={toggleCharactersDropdown}
+          isDropdownOpen={isCharactersDropdownOpen}
         />
-        {isAtomDropdownOpen && (
+        {isCharactersDropdownOpen && (
           <DropdownMenu
-            type="Atom"
-            setAnimation={setAnimation}
-            onMouseLeave={toggleAtomDropdown}
+            type="characters"
+            setCharacter={setCharacter}
+            onMouseLeave={toggleCharactersDropdown}
           />
         )}
       </div>

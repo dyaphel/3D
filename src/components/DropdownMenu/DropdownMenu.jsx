@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./DropdownMenu.css";
 
-function DropdownMenu({ type, setShape, setAnimation }) {
+function DropdownMenu({ type, setShape, setAnimation, setCharacter }) {
   const figureItems = [
     { label: "Cube", value: "Cube" },
     { label: "Sphere", value: "Sphere" },
@@ -17,10 +17,9 @@ function DropdownMenu({ type, setShape, setAnimation }) {
     { label: "Slide", value: "Slide" },
   ];
 
-  const AtomItems = [
-    { label: "core", value: "core" },
-    { label: "Orbiting", value: "Orbiting" },
-    { label: "Floating", value: "Floating" },
+  const characterItems = [
+    { label: "Anime Girl", value: "anime_girl" },
+   
   ];
 
   return (
@@ -50,13 +49,13 @@ function DropdownMenu({ type, setShape, setAnimation }) {
             </Link>
           ))}
 
-        {type === "Atom" &&
-          AtomItems.map((item) => (
+        {type === "characters" &&
+          characterItems.map((item) => (
             <Link
               key={item.value}
-              to={`/${item.value.toLowerCase()}`}
+              to={`/${item.value}`}
               className="dropdown-item"
-              onClick={() => setAnimation(item.value)}
+              onClick={() => setCharacter(item.value)}
             >
               {item.label}
             </Link>
