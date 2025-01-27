@@ -19,8 +19,8 @@ function HeadMouseFollowing() {
 
       // Ruotare la testa
       if (headRef.current) {
-        headRef.current.rotation.y = x * 0.7; // Movimento orizzontale della testa
-        headRef.current.rotation.x = y * 0.4; // Movimento verticale della testa
+        headRef.current.rotation.y = x * 0.5; // Movimento orizzontale della testa
+        headRef.current.rotation.x = y * 0.3; // Movimento verticale della testa
       }
     };
 

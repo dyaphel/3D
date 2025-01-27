@@ -22,12 +22,12 @@ function AnimeGirl() {
   }, [scene, neckRef, headRef]);
 
   return (
-    <Canvas style={{ width: "100%", height: "100vh" }}>
+    <Canvas style={{ width: "100%", height: "80vh" }}>
       <ambientLight intensity={0.5} />
       <directionalLight position={[-10, 0, 0]} intensity={1} />
 
       {/* Aggiungiamo il modello 3D */}
-      <primitive ref={groupRef} object={scene} position={[0, -1, 0]} scale={1.5} />
+      <primitive ref={groupRef} object={scene} position={[0, -2.5, 0]} scale={3} />
 
       {/* Aggiungiamo i controlli della telecamera */}
       <OrbitControls />
