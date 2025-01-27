@@ -18,20 +18,21 @@ export default function Wings({ scene }) {
 
     // Find all wings in the scene
     findWings(scene);
-
-    // Log the found wings (for debugging)
-    console.log("Ali trovate:", wingsRef.current);
   }, [scene]);
 
-  // Wing animation
   useFrame(({ clock }) => {
     const time = clock.getElapsedTime();
-
-    // Move the wings back and forth along the Z-axis relative to their original position
-    wingsRef.current.forEach((wing) => {
-      wing.object.position.z = wing.originalZ + Math.sin(time * 2) * 0.01; // Oscillate around the original Z position
-    });
+    const delay = 2; // Delay in seconds before flapping starts
+  
+    if (time > delay) {
+      wingsRef.current.forEach((wing) => {
+        const frequency = 2; // Speed of oscillation
+        // How far the wings move
+        wing.object.position.z = wing.originalZ + Math.sin((time - delay) * frequency) * 0.012;
+      });
+    }
   });
 
-  return null; // This component doesn't render anything directly
+
+  return null; 
 }
