@@ -25,7 +25,7 @@ export default function ArmController({ scene }) {
       // Apply rotation
       upperArmRef.current.rotation.x = 5; // Rotate upper arm upward (abduction)
       upperArmRef.current.rotation.y = 6.4; // Reset any side rotation
-      upperArmRef.current.rotation.z = -Math.PI / 3; // Slight outward rotation
+      upperArmRef.current.rotation.z = -Math.PI / 3.5; // Slight outward rotation
 
       // Apply translation to move the arm outward along the X-axis
       upperArmRef.current.position.y = 0.15; // Adjust this value as needed
