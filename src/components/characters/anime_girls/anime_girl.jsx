@@ -6,6 +6,9 @@ import Wings from "./Wings"; // Import the Wings component
 import ArmController from "./ArmController";
 import AxesHelper from "./AxesHelper";
 
+import TailController from "./TailController"; // Import the TailController component
+
+
 function AnimeGirl() {
   const groupRef = useRef();
   const { scene } = useGLTF("/anime_girl.glb");
@@ -45,6 +48,7 @@ function AnimeGirl() {
       {/* Add the Wings component and pass the scene to it */}
       <Wings scene={scene} />
       <ArmController scene={scene} /> 
+      <TailController scene={scene} />
       {/* Add camera controls */}
       <OrbitControls />
     </Canvas>
