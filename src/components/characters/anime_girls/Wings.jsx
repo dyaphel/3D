@@ -22,11 +22,11 @@ export default function Wings({ scene }) {
 
   useFrame(({ clock }) => {
     const time = clock.getElapsedTime();
-    const delay = 2; // Delay in seconds before flapping starts
+    const delay = 0.5; // Delay in seconds before flapping starts
   
     if (time > delay) {
       wingsRef.current.forEach((wing) => {
-        const frequency = 2; // Speed of oscillation
+        const frequency = 3; // Speed of oscillation
         // How far the wings move
         wing.object.position.z = wing.originalZ + Math.sin((time - delay) * frequency) * 0.012;
       });

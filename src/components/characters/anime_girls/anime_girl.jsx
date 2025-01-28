@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import HeadMouseFollowing from "./HeadMouseFollowing"; // Import the HeadMouseFollowing component
 import Wings from "./Wings"; // Import the Wings component
+import ArmController from "./ArmController";
 
 function AnimeGirl() {
   const groupRef = useRef();
@@ -20,7 +21,16 @@ function AnimeGirl() {
     // Set references to the specific objects
     if (neck) neckRef.current = neck;
     if (head) headRef.current = head;
+    console.log("Scene Object:", scene);
+
+    // Traverse and log all children of the scene
+    scene.traverse((child) => {
+      if (child.isBone) {
+        console.log("Bone:", child.name);
+      }
+    });
   }, [scene, neckRef, headRef]);
+ 
 
   return (
     <Canvas style={{ width: "100%", height: "80vh" }}>
@@ -32,7 +42,7 @@ function AnimeGirl() {
 
       {/* Add the Wings component and pass the scene to it */}
       <Wings scene={scene} />
-
+      <ArmController scene={scene} />
       {/* Add camera controls */}
       <OrbitControls />
     </Canvas>
