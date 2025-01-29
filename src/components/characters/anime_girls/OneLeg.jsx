@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { useThree, useFrame } from "@react-three/fiber";
 
-function OneLeg({ scene, startAnimation }) {
+function OneLeg({ scene, startAnimation, resetAnimation, setResetAnimation }) {
   const { invalidate } = useThree();
   const rightKneeRef = useRef(null);
-  const [rotation, setRotation] = useState(0);
+  const rotationRef = useRef(0); // Track rotation without triggering re-renders
 
   useEffect(() => {
     if (scene) {
@@ -18,11 +18,19 @@ function OneLeg({ scene, startAnimation }) {
   }, [scene]);
 
   useFrame(() => {
-    if (rightKneeRef.current && startAnimation) { // Only update rotation if startAnimation is true
-      if (rotation < Math.PI / 2) {
-        setRotation((prev) => prev + 0.02);
-        rightKneeRef.current.rotation.x = rotation;
+    if (rightKneeRef.current) {
+      if (startAnimation && rotationRef.current < Math.PI / 2) {
+        rotationRef.current = Math.min(rotationRef.current + 0.02, Math.PI / 2);
+        rightKneeRef.current.rotation.x = rotationRef.current;
         invalidate();
+      } else if (resetAnimation && rotationRef.current > 0) {
+        rotationRef.current = Math.max(rotationRef.current - 0.02, 0);
+        rightKneeRef.current.rotation.x = rotationRef.current;
+        invalidate();
+
+        if (rotationRef.current === 0) {
+          setResetAnimation(false); // Stop resetAnimation when fully reset
+        }
       }
     }
   });

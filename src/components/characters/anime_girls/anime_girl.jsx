@@ -7,12 +7,14 @@ import ArmController from "./ArmController";
 import AxesHelper from "./AxesHelper";
 import OneLeg from "./OneLeg";
 import TailController from "./TailController";
-import { Button } from "../Button/Button";
+import { RaiseLegButton } from "../Button/RaiseLegButton";
+import { ResetLegButton } from "../Button/ResetLegButton";
 
 function AnimeGirl() {
   const groupRef = useRef();
   const { scene } = useGLTF("/anime_girl.glb");
-  const [startAnimation, setStartAnimation] = useState(false); // State to control animation
+  const [startAnimation, setStartAnimation] = useState(false);
+  const [resetAnimation, setResetAnimation] = useState(false);
 
   const { neckRef, headRef } = HeadMouseFollowing();
 
@@ -36,7 +38,7 @@ function AnimeGirl() {
   }, [scene, neckRef, headRef]);
 
   return (
-    <>
+    <div style={{ position: "relative", height: "85vh", textAlign: "center" }}>
       <Canvas style={{ width: "100%", height: "80vh" }}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[-10, 0, 0]} intensity={1} />
@@ -45,11 +47,19 @@ function AnimeGirl() {
         <Wings scene={scene} />
         <ArmController scene={scene} />
         <TailController scene={scene} />
-        <OneLeg scene={scene} startAnimation={startAnimation} /> {/* Pass startAnimation as a prop */}
+        <OneLeg
+          scene={scene}
+          startAnimation={startAnimation}
+          resetAnimation={resetAnimation}
+          setResetAnimation={setResetAnimation}
+        />
         <OrbitControls />
       </Canvas>
-      <Button onClick={() => setStartAnimation(true)}>Start Leg Raise</Button> {/* Button to start animation */}
-    </>
+
+      {/* Use separate button components */}
+      <RaiseLegButton setStartAnimation={setStartAnimation} />
+      <ResetLegButton setResetAnimation={setResetAnimation} />
+    </div>
   );
 }
 

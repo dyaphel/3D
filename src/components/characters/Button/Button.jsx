@@ -2,38 +2,32 @@ import React from "react";
 
 export function Button({ onClick, children }) {
   return (
-    <div
+    <button
+      onClick={(e) => {
+        e.preventDefault(); // Prevents unintended scrolling
+        onClick();
+      }}
       style={{
-        display: "flex",
-        justifyContent: "start", // Center horizontally
-        alignItems: "center", // Center vertically
-        
+        border: "2px solid #C77DFF",
+        padding: "10px 20px",
+        background: "Transparent",
+        color: "#C77DFF",
+        cursor: "pointer",
+        fontSize: "16px",
+        borderRadius: "5px",
+        transition: "all 0.3s ease",
+        margin: "10px", // Space between buttons
+      }}
+      onMouseOver={(e) => {
+        e.target.style.background = "#C77DFF";
+        e.target.style.color = "#FFFFFF";
+      }}
+      onMouseOut={(e) => {
+        e.target.style.background = "Transparent";
+        e.target.style.color = "#C77DFF";
       }}
     >
-      <button
-        onClick={onClick}
-        style={{
-          border: "2px solid #C77DFF", // Brighter and lighter purple
-          padding: "10px 20px",
-          background: "Transparent",
-          color: "#C77DFF", // Brighter and lighter purple
-          cursor: "pointer",
-          fontSize: "16px",
-          borderRadius: "5px",
-          marginLeft: "10%", // Center horizontally
-          transition: "all 0.3s ease", // Smooth transition for hover effects
-        }}
-        onMouseOver={(e) => {
-          e.target.style.background = "#C77DFF"; // Change background on hover
-          e.target.style.color = "#FFFFFF"; // Change text color on hover
-        }}
-        onMouseOut={(e) => {
-          e.target.style.background = "Transparent"; // Revert background
-          e.target.style.color = "#C77DFF"; // Revert text color
-        }}
-      >
-        {children}
-      </button>
-    </div>
+      {children}
+    </button>
   );
 }
