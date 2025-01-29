@@ -37,6 +37,11 @@ function AnimeGirl() {
     });
   }, [scene, neckRef, headRef]);
 
+  const handleReset = () => {
+    setStartAnimation(false); // Stop the raise animation
+    setResetAnimation(true); // Start the reset animation
+  };
+
   return (
     <div style={{ position: "relative", height: "85vh", textAlign: "center" }}>
       <Canvas style={{ width: "100%", height: "80vh" }}>
@@ -58,7 +63,7 @@ function AnimeGirl() {
 
       {/* Use separate button components */}
       <RaiseLegButton setStartAnimation={setStartAnimation} />
-      <ResetLegButton setResetAnimation={setResetAnimation} />
+      <ResetLegButton setResetAnimation={handleReset} />
     </div>
   );
 }

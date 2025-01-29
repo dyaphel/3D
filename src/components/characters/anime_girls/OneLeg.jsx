@@ -19,21 +19,32 @@ function OneLeg({ scene, startAnimation, resetAnimation, setResetAnimation }) {
 
   useFrame(() => {
     if (rightKneeRef.current) {
-      if (startAnimation && rotationRef.current < Math.PI / 2) {
+      if (startAnimation && rotationRef.current < Math.PI / 2.5) {
+        // Raise the leg
         rotationRef.current = Math.min(rotationRef.current + 0.02, Math.PI / 2);
         rightKneeRef.current.rotation.x = rotationRef.current;
         invalidate();
       } else if (resetAnimation && rotationRef.current > 0) {
+        // Reset the leg
         rotationRef.current = Math.max(rotationRef.current - 0.02, 0);
         rightKneeRef.current.rotation.x = rotationRef.current;
         invalidate();
 
-        if (rotationRef.current === 0) {
-          setResetAnimation(false); // Stop resetAnimation when fully reset
+        // Stop resetAnimation when fully reset
+        if (rotationRef.current <= 0) {
+          rotationRef.current = 0.1; // Ensure it stops exactly at 0
+          rightKneeRef.current.rotation.x = 0;
+          setResetAnimation(false); // Reset the state
+          console.log("Leg fully reset. resetAnimation set to false.");
         }
       }
     }
   });
+
+  // Debugging logs
+  useEffect(() => {
+    console.log("resetAnimation:", resetAnimation);
+  }, [resetAnimation]);
 
   return null;
 }
