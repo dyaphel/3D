@@ -21,7 +21,7 @@ function OneLeg({ scene, startAnimation, resetAnimation, setResetAnimation }) {
     if (rightKneeRef.current) {
       if (startAnimation && rotationRef.current < Math.PI / 2.5) {
         // Raise the leg
-        rotationRef.current = Math.min(rotationRef.current + 0.02, Math.PI / 2);
+        rotationRef.current = Math.min(rotationRef.current + 0.02, Math.PI / 2.5);
         rightKneeRef.current.rotation.x = rotationRef.current;
         invalidate();
       } else if (resetAnimation && rotationRef.current > 0) {
@@ -31,9 +31,9 @@ function OneLeg({ scene, startAnimation, resetAnimation, setResetAnimation }) {
         invalidate();
 
         // Stop resetAnimation when fully reset
-        if (rotationRef.current <= 0) {
-          rotationRef.current = 0.1; // Ensure it stops exactly at 0
-          rightKneeRef.current.rotation.x = 0;
+        if (rotationRef.current <= 0.02) {
+          rotationRef.current = 0; // Ensure it stops exactly at 0
+          rightKneeRef.current.rotation.x = 0.1; // Reset the rotation to 0
           setResetAnimation(false); // Reset the state
           console.log("Leg fully reset. resetAnimation set to false.");
         }
