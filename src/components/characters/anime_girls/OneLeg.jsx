@@ -21,12 +21,12 @@ function OneLeg({ scene, startAnimation, resetAnimation, setResetAnimation }) {
     if (rightKneeRef.current) {
       if (startAnimation && rotationRef.current < Math.PI / 2.5) {
         // Raise the leg
-        rotationRef.current = Math.min(rotationRef.current + 0.02, Math.PI / 2.5);
+        rotationRef.current = Math.min(rotationRef.current + 0.05, Math.PI / 2.5);
         rightKneeRef.current.rotation.x = rotationRef.current;
         invalidate();
       } else if (resetAnimation && rotationRef.current > 0) {
         // Reset the leg
-        rotationRef.current = Math.max(rotationRef.current - 0.02, 0);
+        rotationRef.current = Math.max(rotationRef.current - 0.05, 0);
         rightKneeRef.current.rotation.x = rotationRef.current;
         invalidate();
 

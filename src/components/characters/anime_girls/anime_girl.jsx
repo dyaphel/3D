@@ -48,9 +48,9 @@ function AnimeGirl() {
         <ambientLight intensity={0.5} />
         <directionalLight position={[-10, 0, 0]} intensity={1} />
         <AxesHelper scene={scene} />
-        <primitive ref={groupRef} object={scene} position={[0, -2.5, 0]} scale={3} />
+        <primitive ref={groupRef} object={scene} position={[0, -2.5, 0]} scale={3.5} />
         <Wings scene={scene} />
-        <ArmController scene={scene} />
+        {/* <ArmController scene={scene} /> */}
         <TailController scene={scene} />
         <OneLeg
           scene={scene}
