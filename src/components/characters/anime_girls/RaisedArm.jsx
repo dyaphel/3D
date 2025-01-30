@@ -27,9 +27,9 @@ export default function RaisedArm({ scene }) {
       upperArmRef.current.rotation.z = 0.6; // No outward rotation
 
       // Adjust the position to move the arm upwards
-      upperArmRef.current.position.y = 0.14; // Raise the arm high
-      upperArmRef.current.position.x = -0.06; // Keep the arm slightly outward
-      upperArmRef.current.position.z = -0.07; 
+      upperArmRef.current.position.y = 0.12; // Raise the arm high
+      upperArmRef.current.position.x = -0.08; // Keep the arm slightly outward
+      upperArmRef.current.position.z = -0.08; 
     }
 
     if (lowerArmRef.current) {
