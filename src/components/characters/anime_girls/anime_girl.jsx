@@ -3,7 +3,8 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import HeadMouseFollowing from "./HeadMouseFollowing";
 import Wings from "./Wings";
-import ArmController from "./ArmController";
+
+import RaisedArm from "./RaisedArm";
 import AxesHelper from "./AxesHelper";
 import OneLeg from "./OneLeg";
 import TailController from "./TailController";
@@ -52,6 +53,8 @@ function AnimeGirl() {
         <Wings scene={scene} />
         {/* <ArmController scene={scene} /> */}
         <TailController scene={scene} />
+        
+        <RaisedArm scene={scene} />
         <OneLeg
           scene={scene}
           startAnimation={startAnimation}
