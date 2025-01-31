@@ -3,19 +3,23 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import HeadMouseFollowing from "./HeadMouseFollowing";
 import Wings from "./Wings";
-
 import RaisedArm from "./RaisedArm";
 import AxesHelper from "./AxesHelper";
 import OneLeg from "./OneLeg";
 import TailController from "./TailController";
 import { RaiseLegButton } from "../Button/RaiseLegButton";
 import { ResetLegButton } from "../Button/ResetLegButton";
+import { RaiseArmButton } from "../Button/RaiseArmButton";
+import { ResetArmButton } from "../Button/ResetArmButton";
 
 function AnimeGirl() {
   const groupRef = useRef();
   const { scene } = useGLTF("/anime_girl.glb");
-  const [startAnimation, setStartAnimation] = useState(false);
-  const [resetAnimation, setResetAnimation] = useState(false);
+  const [startLegAnimation, setStartLegAnimation] = useState(false);
+  const [resetLegAnimation, setResetLegAnimation] = useState(false);
+
+  const [startArmAnimation, setStartArmAnimation] = useState(false);
+  const [resetArmAnimation, setResetArmAnimation] = useState(false);
 
   const { neckRef, headRef } = HeadMouseFollowing();
 
@@ -38,9 +42,14 @@ function AnimeGirl() {
     });
   }, [scene, neckRef, headRef]);
 
-  const handleReset = () => {
-    setStartAnimation(false); // Stop the raise animation
-    setResetAnimation(true); // Start the reset animation
+  const handleResetLeg = () => {
+    setStartLegAnimation(false); // Stop the raise animation
+    setResetLegAnimation(true); // Start the reset animation
+  };
+
+  const handleResetArm = () => {
+    setStartArmAnimation(false);
+    setResetArmAnimation(true);
   };
 
   return (
@@ -51,22 +60,20 @@ function AnimeGirl() {
         <AxesHelper scene={scene} />
         <primitive ref={groupRef} object={scene} position={[0, -2.5, 0]} scale={3.5} />
         <Wings scene={scene} />
-        {/* <ArmController scene={scene} /> */}
         <TailController scene={scene} />
         
-        <RaisedArm scene={scene} />
-        <OneLeg
-          scene={scene}
-          startAnimation={startAnimation}
-          resetAnimation={resetAnimation}
-          setResetAnimation={setResetAnimation}
-        />
+        <RaisedArm scene={scene} startAnimation={startArmAnimation} 
+         resetAnimation={resetArmAnimation} setResetAnimation={setResetArmAnimation}  />
+        <OneLeg scene={scene} startAnimation={startLegAnimation}
+          resetAnimation={resetLegAnimation} setResetAnimation={setResetLegAnimation} />
         <OrbitControls />
       </Canvas>
 
       {/* Use separate button components */}
-      <RaiseLegButton setStartAnimation={setStartAnimation} />
-      <ResetLegButton setResetAnimation={handleReset} />
+      <RaiseLegButton setStartAnimation={setStartLegAnimation} />
+      <ResetLegButton setResetAnimation={handleResetLeg} />
+      <RaiseArmButton setStartAnimation={setStartArmAnimation} />
+      <ResetArmButton setResetAnimation={handleResetArm} />
     </div>
   );
 }
