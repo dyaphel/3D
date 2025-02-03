@@ -62,10 +62,18 @@ function AnimeGirl() {
         <Wings scene={scene} />
         <TailController scene={scene} />
         
-        <RaisedArm scene={scene} startAnimation={startArmAnimation} 
-         resetAnimation={resetArmAnimation} setResetAnimation={setResetArmAnimation}  />
-        <OneLeg scene={scene} startAnimation={startLegAnimation}
-          resetAnimation={resetLegAnimation} setResetAnimation={setResetLegAnimation} />
+        <RaisedArm 
+          scene={scene} 
+          startAnimation={startArmAnimation} 
+          resetAnimation={resetArmAnimation} 
+          setResetAnimation={setResetArmAnimation} 
+        />
+        <OneLeg 
+          scene={scene} 
+          startAnimation={startLegAnimation}
+          resetAnimation={resetLegAnimation} 
+          setResetAnimation={setResetLegAnimation} 
+        />
         <OrbitControls />
       </Canvas>
 
