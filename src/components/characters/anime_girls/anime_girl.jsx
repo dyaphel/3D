@@ -21,6 +21,9 @@ function AnimeGirl() {
   const [startArmAnimation, setStartArmAnimation] = useState(false);
   const [resetArmAnimation, setResetArmAnimation] = useState(false);
 
+  const [startWaving, setStartWaving] = useState(false);
+  const [resetWaving, setResetWaving] = useState(false);
+
   const { neckRef, headRef } = HeadMouseFollowing();
 
   useEffect(() => {
@@ -52,6 +55,8 @@ function AnimeGirl() {
     setResetArmAnimation(true);
   };
 
+
+
   return (
     <div style={{ position: "relative", height: "85vh", textAlign: "center" }}>
       <Canvas style={{ width: "100%", height: "80vh" }}>
@@ -68,6 +73,7 @@ function AnimeGirl() {
           resetAnimation={resetArmAnimation} 
           setResetAnimation={setResetArmAnimation} 
         />
+       
         <OneLeg 
           scene={scene} 
           startAnimation={startLegAnimation}
@@ -82,6 +88,7 @@ function AnimeGirl() {
       <ResetLegButton setResetAnimation={handleResetLeg} />
       <RaiseArmButton setStartAnimation={setStartArmAnimation} />
       <ResetArmButton setResetAnimation={handleResetArm} />
+    
     </div>
   );
 }

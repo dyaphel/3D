@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./DropdownMenu.css";
+import { label } from "three/tsl";
 
 function DropdownMenu({ type, setShape, setAnimation, setCharacter }) {
   const figureItems = [
@@ -19,6 +20,8 @@ function DropdownMenu({ type, setShape, setAnimation, setCharacter }) {
 
   const characterItems = [
     { label: "Anime Girl", value: "anime_girl" },
+    { label: "Taila", value: "Taila" },
+    {label: "Telimia", value: "Telimia"},
    
   ];
 

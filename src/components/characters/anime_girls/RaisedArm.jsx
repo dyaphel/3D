@@ -63,7 +63,7 @@ export default function RaisedArm({ scene, startAnimation, resetAnimation, setRe
       if (upperArmRef.current) {
         upperArmRef.current.rotation.x = Math.PI / 2.5 * progress; // Smoothly raise arm
         upperArmRef.current.rotation.y = -3.3 * progress; // Rotate the arm laterally
-        upperArmRef.current.rotation.z = 1 * progress; // Control the rotation
+        upperArmRef.current.rotation.z = 0.6 * progress; // Control the rotation
         
         upperArmRef.current.position.y = 0.1 * progress; // Move arm upwards
         upperArmRef.current.position.x = -0.05* progress; // Move arm to the left

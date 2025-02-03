@@ -10,6 +10,8 @@ import Spin from '../components/animations/Spin/Spin';
 import Fade from '../components/animations/Fade/Fade';
 import Slide from '../components/animations/Slide/Slide';
 import AnimeGirl from '../components/characters/anime_girls/anime_girl';
+import Taila from '../components/characters/Taila/Taila';
+import Telimia from '../components/characters/Telimia/Telimia';
 
 const AppRoutes = () => (
   <Routes>
@@ -23,8 +25,9 @@ const AppRoutes = () => (
     <Route path="/fade" element={<Fade/>} />
     <Route path="/slide" element={<Slide/>} />
     <Route path='/anime_girl' element={<AnimeGirl/>} />
-  
-
+    <Route path='/Taila' element={<Taila/>} />  
+    <Route path='/Telimia' element={<Telimia/>} />
+    
   </Routes>
 );
 
