@@ -18,7 +18,7 @@ return (
         <OrbitControls />
         <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} />
-        <primitive ref={groupRef} object={scene} position={[0, -3.5, 0]} scale={3.5} />
+        <primitive ref={groupRef} object={scene} position={[0, -3.2, 0]} scale={3.5} />
     </Canvas>   
 );
 }
