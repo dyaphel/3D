@@ -13,7 +13,17 @@ import AnimeGirl from '../components/characters/anime_girls/anime_girl';
 import Taila from '../components/characters/Taila/Taila';
 import Telimia from '../components/characters/Telimia/Telimia';
 
-const AppRoutes = ({ isRotating }) => (
+const AppRoutes = ({ 
+  isRotating,
+  startLegAnimation,
+  resetLegAnimation,
+  startArmAnimation,
+  resetArmAnimation,
+  setStartLegAnimation,
+  setResetLegAnimation,
+  setStartArmAnimation,
+  setResetArmAnimation,
+ }) => (
   <Routes>
   
     <Route path="/cube" element={<Cube />} />
@@ -24,7 +34,16 @@ const AppRoutes = ({ isRotating }) => (
     <Route path="/spin" element={<Spin />} />
     <Route path="/fade" element={<Fade/>} />
     <Route path="/slide" element={<Slide/>} />
-    <Route path='/anime_girl' element={<AnimeGirl/>} />
+    <Route path='/anime_girl' element={<AnimeGirl
+    startLegAnimation={startLegAnimation}
+    resetLegAnimation={resetLegAnimation}
+    startArmAnimation={startArmAnimation}
+    resetArmAnimation={resetArmAnimation}
+    setStartLegAnimation={setStartLegAnimation}
+    setResetLegAnimation={setResetLegAnimation}
+    setStartArmAnimation={setStartArmAnimation}
+    setResetArmAnimation={setResetArmAnimation}/>
+    } />
     <Route path='/Taila' element={<Taila isRotating={isRotating} />} />  
     <Route path='/Telimia' element={<Telimia/>} />
     

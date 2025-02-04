@@ -12,14 +12,23 @@ import { ResetLegButton } from "../Button/ResetLegButton";
 import { RaiseArmButton } from "../Button/RaiseArmButton";
 import { ResetArmButton } from "../Button/ResetArmButton";
 
-function AnimeGirl() {
+function AnimeGirl({
+  startLegAnimation,
+  resetLegAnimation,
+  startArmAnimation,
+  resetArmAnimation,
+  setStartLegAnimation,
+  setResetLegAnimation,
+  setStartArmAnimation,
+  setResetArmAnimation,
+}) {
   const groupRef = useRef();
   const { scene } = useGLTF("/anime_girl.glb");
-  const [startLegAnimation, setStartLegAnimation] = useState(false);
-  const [resetLegAnimation, setResetLegAnimation] = useState(false);
+  // const [startLegAnimation, setStartLegAnimation] = useState(false);
+  // const [resetLegAnimation, setResetLegAnimation] = useState(false);
 
-  const [startArmAnimation, setStartArmAnimation] = useState(false);
-  const [resetArmAnimation, setResetArmAnimation] = useState(false);
+  // const [startArmAnimation, setStartArmAnimation] = useState(false);
+  // const [resetArmAnimation, setResetArmAnimation] = useState(false);
 
 
   const { neckRef, headRef } = HeadMouseFollowing();
@@ -43,15 +52,15 @@ function AnimeGirl() {
     });
   }, [scene, neckRef, headRef]);
 
-  const handleResetLeg = () => {
-    setStartLegAnimation(false); // Stop the raise animation
-    setResetLegAnimation(true); // Start the reset animation
-  };
+  // const handleResetLeg = () => {
+  //   setStartLegAnimation(false); // Stop the raise animation
+  //   setResetLegAnimation(true); // Start the reset animation
+  // };
 
-  const handleResetArm = () => {
-    setStartArmAnimation(false);
-    setResetArmAnimation(true);
-  };
+  // const handleResetArm = () => {
+  //   setStartArmAnimation(false);
+  //   setResetArmAnimation(true);
+  // };
 
 
 
@@ -82,10 +91,10 @@ function AnimeGirl() {
       </Canvas>
 
       {/* Use separate button components */}
-      <RaiseLegButton setStartAnimation={setStartLegAnimation} />
+      {/* <RaiseLegButton setStartAnimation={setStartLegAnimation} />
       <ResetLegButton setResetAnimation={handleResetLeg} />
       <RaiseArmButton setStartAnimation={setStartArmAnimation} />
-      <ResetArmButton setResetAnimation={handleResetArm} />
+      <ResetArmButton setResetAnimation={handleResetArm} /> */}
     
     </div>
   );
