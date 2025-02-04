@@ -1,10 +1,11 @@
-import React from "react";
-import "./Sidebar.css";
+import React from 'react';
+import './Sidebar.css';
 
-function Sidebar({ isVisible }) {
+function Sidebar({ isVisible, children }) {
+  console.log('Sidebar children:', children);
   return (
     <div className={`sidebar ${isVisible ? "sidebar-visible" : "sidebar-hidden"}`}>
-      {/* Sidebar content goes here */}
+      {children}
     </div>
   );
 }

@@ -2,11 +2,11 @@ import React, { useState, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import YTurn from "./YTurn";
-import RotatingButton from "../Button/RotatingButton";
+// import RotatingButton from "../Button/RotatingButton";
 
-function Taila() {
+function Taila({ isRotating }) {
     const { scene } = useGLTF("/Taila.glb");
-    const [isRotating, setIsRotating] = useState(false);
+    // const [isRotating, setIsRotating] = useState(false);
     const groupRef = useRef();
 
     return (
@@ -23,7 +23,7 @@ function Taila() {
             </Canvas>
 
             {/* Button to toggle rotation */}
-            <RotatingButton setIsRotating={setIsRotating}/>
+            {/* <RotatingButton setIsRotating={setIsRotating}/> */}
         </div>
     );
 }

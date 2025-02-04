@@ -13,7 +13,7 @@ import AnimeGirl from '../components/characters/anime_girls/anime_girl';
 import Taila from '../components/characters/Taila/Taila';
 import Telimia from '../components/characters/Telimia/Telimia';
 
-const AppRoutes = () => (
+const AppRoutes = ({ isRotating }) => (
   <Routes>
   
     <Route path="/cube" element={<Cube />} />
@@ -25,7 +25,7 @@ const AppRoutes = () => (
     <Route path="/fade" element={<Fade/>} />
     <Route path="/slide" element={<Slide/>} />
     <Route path='/anime_girl' element={<AnimeGirl/>} />
-    <Route path='/Taila' element={<Taila/>} />  
+    <Route path='/Taila' element={<Taila isRotating={isRotating} />} />  
     <Route path='/Telimia' element={<Telimia/>} />
     
   </Routes>
