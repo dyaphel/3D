@@ -1,0 +1,25 @@
+.sidebar {
+    width: 150px;
+    height: calc(100vh - 70px); /* Full height minus navbar */
+    position: fixed;
+    left: 0;
+    backdrop-filter: blur(10px); /* Smooth glass effect */
+    border-right: 3px solid cyan; /* Neon right border */
+    box-shadow: 3px 0 10px rgba(0, 255, 255, 0.3);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above other content */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  .sidebar-visible {
+    transform: translateX(0); /* Sidebar fully visible */
+    opacity: 1; /* Fully opaque */
+  }
+  
+  .sidebar-hidden {
+    transform: translateX(-100%); /* Sidebar hidden off-screen */
+    opacity: 0; /* Fully transparent */
+  }
