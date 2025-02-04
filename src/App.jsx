@@ -1,28 +1,51 @@
-import './App.css'
-import React, { useState } from 'react'
-import Navbar from './components/Navbar/Navbar'
-import AppRoutes from './routes/AppRoutes'
-import Sidebar from './components/Sidebar/Sidebar'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState } from 'react';
+import { BrowserRouter as Router, useLocation } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
+import Sidebar from './components/Sidebar/Sidebar';
+import AppRoutes from './routes/AppRoutes';
+import './App.css';
 
-
-function App() {
-
+function AppContent() {
+  const location = useLocation(); // Get the current route
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarVisible(!isSidebarVisible);
   };
+
+  // Define routes where the sidebar and toggle button should appear
+  const showSidebarRoutes = ['/Taila']; // Add other routes if needed
+
+  // Check if the current route is in the showSidebarRoutes array
+  const shouldShowSidebar = showSidebarRoutes.includes(location.pathname);
+
   return (
-    <Router>
     <div>
-       <Navbar  toggleSidebar={toggleSidebar}/>
-       <Sidebar isVisible={isSidebarVisible} />
-      <AppRoutes/> 
-    
+      {/* Always render the Navbar */}
+      <Navbar toggleSidebar={toggleSidebar} showToggleButton={shouldShowSidebar} />
+
+      {/* Conditionally render the Sidebar */}
+      {shouldShowSidebar && (
+        <>
+          <Sidebar isVisible={isSidebarVisible} />
+          {isSidebarVisible && (
+            <div className="backdrop" onClick={toggleSidebar} />
+          )}
+        </>
+      )}
+
+      {/* Render the routes */}
+      <AppRoutes />
     </div>
-  </Router>
-);
+  );
 }
 
-export default App
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
+}
+
+export default App;

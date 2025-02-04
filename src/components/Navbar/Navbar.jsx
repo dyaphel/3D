@@ -3,7 +3,7 @@ import DropdownButton from "../DropdownButton/DropdownButton";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import "./Navbar.css";
 
-function Navbar({ setShape, setAnimation, setCharacter, toggleSidebar }) {
+function Navbar({ setShape, setAnimation, setCharacter, toggleSidebar,showToggleButton  }) {
   const [isFiguresDropdownOpen, setIsFiguresDropdownOpen] = useState(false);
   const [isAnimationDropdownOpen, setIsAnimationDropdownOpen] = useState(false);
   const [isCharactersDropdownOpen, setIsCharactersDropdownOpen] = useState(false);
@@ -23,10 +23,11 @@ function Navbar({ setShape, setAnimation, setCharacter, toggleSidebar }) {
   return (
     <nav className="neon-navbar">
       {/* Toggle Sidebar Button */}
+      {showToggleButton && (
       <button className="neon-button" onClick={toggleSidebar}>
       ☰
       </button>
-
+      )}
       {/* Figures Dropdown Button */}
       <div className="dropdown">
         <DropdownButton
