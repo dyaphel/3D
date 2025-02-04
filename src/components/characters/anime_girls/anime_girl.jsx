@@ -21,8 +21,6 @@ function AnimeGirl() {
   const [startArmAnimation, setStartArmAnimation] = useState(false);
   const [resetArmAnimation, setResetArmAnimation] = useState(false);
 
-  const [startWaving, setStartWaving] = useState(false);
-  const [resetWaving, setResetWaving] = useState(false);
 
   const { neckRef, headRef } = HeadMouseFollowing();
 
