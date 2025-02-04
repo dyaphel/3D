@@ -36,9 +36,12 @@ function AppContent() {
 
       {/* Render the routes */}
       <AppRoutes />
+   
     </div>
   );
 }
+
+/*necessary becasue of the use of the useLocation hook which need to be defined after the Router*/
 
 function App() {
   return (
