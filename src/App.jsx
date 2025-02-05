@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
 import AppRoutes from './routes/AppRoutes';
@@ -20,6 +20,8 @@ function AppContent() {
   const [startArmAnimation, setStartArmAnimation] = useState(false);
   const [resetArmAnimation, setResetArmAnimation] = useState(false);
 
+
+  const navigate = useNavigate();
 
 
 
@@ -49,7 +51,7 @@ function AppContent() {
       case '/Taila':
         return (
           <>
-         <Button onClick={() => console.log('Button clicked!')}>
+         <Button onClick={() => navigate('/Taila/mesh')}>
             <img className="button-icon" src="/mannequin.png" alt="Button Icon" />
           </Button>
           <RotatingButton setIsRotating={setIsRotating}/>,

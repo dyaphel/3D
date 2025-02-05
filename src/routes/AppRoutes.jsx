@@ -11,7 +11,11 @@ import Fade from '../components/animations/Fade/Fade';
 import Slide from '../components/animations/Slide/Slide';
 import AnimeGirl from '../components/characters/anime_girls/anime_girl';
 import Taila from '../components/characters/Taila/Taila';
+import TailaMesh from '../components/characters/Taila/Mesh/TailaMesh';
+
 import Telimia from '../components/characters/Telimia/Telimia';
+
+
 
 const AppRoutes = ({ 
   isRotating,
@@ -45,6 +49,8 @@ const AppRoutes = ({
     setResetArmAnimation={setResetArmAnimation}/>
     } />
     <Route path='/Taila' element={<Taila isRotating={isRotating} />} />  
+    <Route path='/Taila/mesh' element={<TailaMesh />} />
+
     <Route path='/Telimia' element={<Telimia/>} />
     
   </Routes>
