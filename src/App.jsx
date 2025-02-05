@@ -47,7 +47,6 @@ function AppContent() {
   const getSidebarContent = () => {
     switch (location.pathname) {
       case '/Taila':
-        console.log('Rendering RotatingButton for /Taila');
         return (
           <>
          <Button onClick={() => console.log('Button clicked!')}>
