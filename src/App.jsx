@@ -3,6 +3,7 @@ import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
 import AppRoutes from './routes/AppRoutes';
+import { Button } from './components/characters/Button/Button';
 import {RotatingButton} from './components/characters/Button/RotatingButton';
 import {RaiseLegButton} from './components/characters/Button/RaiseLegButton';
 import {ResetLegButton} from './components/characters/Button/ResetLegButton';
@@ -47,7 +48,15 @@ function AppContent() {
     switch (location.pathname) {
       case '/Taila':
         console.log('Rendering RotatingButton for /Taila');
-        return <RotatingButton setIsRotating={setIsRotating} />; // Example content for the Taila route
+        return (
+          <>
+         <Button onClick={() => console.log('Button clicked!')}>
+            <img className="button-icon" src="/mannequin.png" alt="Button Icon" />
+          </Button>
+          <RotatingButton setIsRotating={setIsRotating}/>,
+        </>
+
+         ); // Example content for the Taila route
       case '/anime_girl':
         return (
            <>

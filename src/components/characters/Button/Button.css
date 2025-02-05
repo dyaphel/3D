@@ -1,0 +1,26 @@
+.button-custom {
+    border: 2px solid #C77DFF;
+    padding: 10px 20px;
+    background: transparent;
+    color: #C77DFF;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin: 10px; /* Space between buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button-custom:hover {
+    background: #C77DFF;
+    color: #FFFFFF;
+  }
+  
+  .button-custom img {
+    width: 80px;
+    height: 75px;
+    pointer-events: none; /* Prevents the image from interfering with hover events */
+  }
+  

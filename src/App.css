@@ -4,3 +4,11 @@ canvas {
     z-index: 1;
   }
   
+  .button-icon {
+    width: 80px;
+    height: 75px;
+  }
+  
+  .button-icon:hover{
+    background-color: transparent;
+  }
