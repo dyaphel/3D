@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import YTurn from "./YTurn";
@@ -9,6 +9,13 @@ function Taila({ isRotating }) {
     // const [isRotating, setIsRotating] = useState(false);
     const groupRef = useRef();
 
+    useEffect(() => {
+        scene.traverse((child) => {
+            if (child.isMesh) {  // Controlla se ha un materiale
+                console.log("Mesh trovata:", child.name || "Senza nome");
+            }
+        });
+    }, [scene]);
     return (
         <div style={{ textAlign: "center" }}>
             <Canvas style={{ width: "100%", height: "80vh" }}>
