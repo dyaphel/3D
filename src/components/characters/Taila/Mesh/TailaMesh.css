@@ -1,0 +1,18 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Wider grid items */
+  gap: 16px; /* Space between grid items */
+  padding: 16px;
+}
+
+.grid-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.grid-item canvas {
+  width: 100% !important; /* Ensure the canvas fills the grid item */
+  height: 300px !important; /* Set a larger fixed height for the canvas */
+}

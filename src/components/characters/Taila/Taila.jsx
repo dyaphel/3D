@@ -9,13 +9,13 @@ function Taila({ isRotating, position = [0, -3.2, 0], scale = 3.5 }) {
     // const [isRotating, setIsRotating] = useState(false);
     const groupRef = useRef();
 
-    // useEffect(() => {
-    //     scene.traverse((child) => {
-    //         if (child.isMesh) {  // Controlla se ha un materiale
-    //             console.log("Mesh trovata:", child.name || "Senza nome");
-    //         }
-    //     });
-    // }, [scene]);
+    useEffect(() => {
+        scene.traverse((child) => {
+            if (child.isMesh) {  // Controlla se ha un materiale
+            console.log("Mesh trovata:", child.name || "Senza nome");
+            }
+        });
+    }, [scene]);
 
     return (
         <div style={{ textAlign: "center" }}>
