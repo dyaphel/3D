@@ -9,7 +9,7 @@ function MeshViewer({ mesh, name }) {
       <Canvas>
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
-        <primitive object={mesh.clone()} scale={[2, 2, 2]} />
+        <primitive object={mesh.clone()} scale={[20, 20, 20]} />
         <OrbitControls enableZoom={true} /> {/* Allow user to rotate the mesh */}
       </Canvas>
     </div>

@@ -8,11 +8,12 @@
 .grid-item {
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 16px;
   text-align: center;
+  height: 300px;
 }
 
 .grid-item canvas {
+  scale: 1.5; /* Scale the canvas up */
   width: 100% !important; /* Ensure the canvas fills the grid item */
-  height: 300px !important; /* Set a larger fixed height for the canvas */
+  height: 100% !important; /* Set a larger fixed height for the canvas */
 }
