@@ -1,18 +1,53 @@
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 10fr)); /* Wider grid items */
-  gap: 16px; /* Space between grid items */
-  padding: 16px;
+
+
+/* Container for the entire TailaMesh component */
+.TailaMesh-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
 }
 
-.grid-item {
-  border: 1px solid #ccc;
-  border-radius: 8px;
+/* Styling for each mesh container */
+.mesh-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mesh-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling for the mesh name */
+.mesh-name {
   text-align: center;
-  height: 40vh;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #444;
+  padding: 15px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.grid-item canvas {
-  width: 100% !important; /* Ensure the canvas fills the grid item */
-  height: 100% !important; /* Set a larger fixed height for the canvas */
+/* Styling for the Canvas container */
+.canvas-container {
+  width: 800px;
+  height: 800px;
+  margin: 0 auto;
 }
+
+/* Styling for the OrbitControls */
+.orbit-controls {
+  cursor: grab;
+}
+
+.orbit-controls:active {
+  cursor: grabbing;
+}
+
