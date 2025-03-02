@@ -19,7 +19,7 @@ function DropdownMenu({ type, setShape, setAnimation, setCharacter }) {
   ];
 
   const characterItems = [
-    { label: "Anime Girl", value: "anime_girl" },
+    { label: "Zora", value: "Zora" },
     { label: "Taila", value: "Taila" },
     {label: "Telimia", value: "Telimia"},
    
