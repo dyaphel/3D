@@ -49,4 +49,12 @@ This project was created to explore the integration of 3D objects and models in 
 # 🤝 Contributing
 Contributions are welcome! If you have ideas for new features, improvements, or bug fixes, feel free to open an issue or submit a pull request. Let's make this project even better together!
 
+# 📩 Contact  
+If you have any questions or feedback, feel free to reach out!
+
+📩 e-mail: dyaphel00@gmail.com   
+🐙 GitHub: dyaphel
+
+
+
 Happy coding! 🎉
