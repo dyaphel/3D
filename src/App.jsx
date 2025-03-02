@@ -41,7 +41,7 @@ function AppContent() {
   };
 
   // Define routes where the sidebar and toggle button should appear
-  const showSidebarRoutes = ['/Taila','/anime_girl']; // Add other routes if needed
+  const showSidebarRoutes = ['/Taila','/Zora']; // Add other routes if needed
   // Check if the current route is in the showSidebarRoutes array
   const shouldShowSidebar = showSidebarRoutes.includes(location.pathname);
 
@@ -58,7 +58,7 @@ function AppContent() {
         </>
 
          ); // Example content for the Taila route
-      case '/anime_girl':
+      case '/Zora':
         return (
            <>
             <RaiseLegButton setStartAnimation={setStartLegAnimation} />
