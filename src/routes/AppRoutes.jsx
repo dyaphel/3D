@@ -9,7 +9,7 @@ import Bounce from '../components/animations/Bounce/Bounce';
 import Spin from '../components/animations/Spin/Spin';
 import Fade from '../components/animations/Fade/Fade';
 import Slide from '../components/animations/Slide/Slide';
-import Zora from '../components/characters/Zora/Zora';
+import Zora from '../components/characters/anime_girls/anime_girl';
 import Taila from '../components/characters/Taila/Taila';
 import TailaMesh from '../components/characters/Taila/Mesh/TailaMesh';
 
@@ -38,7 +38,7 @@ const AppRoutes = ({
     <Route path="/spin" element={<Spin />} />
     <Route path="/fade" element={<Fade/>} />
     <Route path="/slide" element={<Slide/>} />
-    <Route path='/Zora' element={<Zora
+    <Route path='/anime_girl' element={<Zora
     startLegAnimation={startLegAnimation}
     resetLegAnimation={resetLegAnimation}
     startArmAnimation={startArmAnimation}
