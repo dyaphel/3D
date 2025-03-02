@@ -12,7 +12,7 @@ import { ResetLegButton } from "../Button/ResetLegButton";
 import { RaiseArmButton } from "../Button/RaiseArmButton";
 import { ResetArmButton } from "../Button/ResetArmButton";
 
-function AnimeGirl({
+function Zora({
   startLegAnimation,
   resetLegAnimation,
   startArmAnimation,
@@ -100,4 +100,4 @@ function AnimeGirl({
   );
 }
 
-export default React.memo(AnimeGirl);
+export default React.memo(Zora);
