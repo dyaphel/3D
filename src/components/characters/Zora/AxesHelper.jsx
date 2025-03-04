@@ -21,7 +21,7 @@ function AxesHelper({ scene }) {
 
   useFrame(() => {
     if (axesRef.current) {
-      const model = scene.getObjectByName("/anime_girl.glb"); // Replace with your model's name
+      const model = scene.getObjectByName("/zora.glb"); // Replace with your model's name
 
       if (model) {
         // Compute the bounding box of the model
