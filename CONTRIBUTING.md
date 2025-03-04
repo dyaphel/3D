@@ -11,16 +11,15 @@ Welcome, contributors! 🎉 We’re excited to have you here. Whether you’re f
 
 2. **Clone Your Fork**  
    ```bash
-   git clone https://github.com/your-username/3D.git
-   cd 3D
+   git clone https://github.com/dyaphel/3D.git  cd 3D
 3.Set Up the Project
   -Install dependencies:
    ```bash
-    npm install
+     npm install
    ```
   -Run the development server:
    ```bash
-    npm run dev
+     npm run dev
    ```
 4.Create a New Branch
 Always work on a new branch for your changes !!
