@@ -23,7 +23,7 @@ function Zora({
   setResetArmAnimation,
 }) {
   const groupRef = useRef();
-  const { scene } = useGLTF("/anime_girl.glb");
+  const { scene } = useGLTF("/zora.glb");
   // const [startLegAnimation, setStartLegAnimation] = useState(false);
   // const [resetLegAnimation, setResetLegAnimation] = useState(false);
 
